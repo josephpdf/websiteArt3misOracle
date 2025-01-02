@@ -1,32 +1,24 @@
-import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
 import { toast } from "@/components/ui/use-toast";
 
 export function FeedbackForm() {
-  const [comment, setComment] = useState("");
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    // Here you can add the logic to send the comment to your backend
+    const handleFeedbackClick = () => {
+    // Change the link to where you want to redirect
+    window.location.href = "https://forms.gle/81WhiBc9RcsoG5JaA";
     toast({
-      title: "Feedback Sent",
-      description: "Thank you for your feedback.",
+      title: "Redirecting",
+      description: "You will be redirected to the feedback page.",
     });
-    setComment(""); // Clear the input field
   };
 
   return (
-    <form onSubmit={handleSubmit} className="flex flex-col gap-2">
-      <Input
-        type="text"
-        placeholder="Write your feedback here..."
-        value={comment}
-        onChange={(e) => setComment(e.target.value)}
-      />
-      <Button type="submit" disabled={!comment}>
+    <div className="flex justify-center">
+      <Button 
+        onClick={handleFeedbackClick} 
+        className="bg-gray-500 text-white hover:bg-gray-600"
+      >
         Send Feedback
       </Button>
-    </form>
+    </div>
   );
 } 

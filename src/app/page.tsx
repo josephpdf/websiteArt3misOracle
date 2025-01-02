@@ -36,7 +36,7 @@ function App() {
           </CardHeader>
         )}
       </div>
-      <div className="p-4">
+      <div className="p-4 flex items-center justify-center flex-col">
         <h2 className="text-lg font-medium">Feedback</h2>
         <FeedbackForm />
       </div>
